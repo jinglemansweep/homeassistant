@@ -1,0 +1,13 @@
+notify:
+  sequence:
+    - service: notify.slack
+      data_template:
+        message: "{{ message }}"
+    - service: notify.atv_shield
+      data_template:
+        message: "{{ message }}"
+    - service: notify.atv_nexusplayer
+      data_template:
+        message: "{{ message }}"
+
+

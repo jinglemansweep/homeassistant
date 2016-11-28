@@ -1,0 +1,10 @@
+*.db
+*.log
+.google.token
+.HA_VERSION
+.uuid
+google_calendars.yaml
+known_devices.yaml
+plex.conf
+phue.conf
+secrets.yaml

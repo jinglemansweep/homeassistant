@@ -1,0 +1,32 @@
+- platform: rfxtrx
+  automatic_add: true
+
+- platform: google_travel_time
+  name: IPS to CBG
+  api_key: AIzaSyCMWmrNNjrve445-DLSBZCcsIsPZu8_k4Q
+  origin: zone.home
+  destination: Betjemen House, Cambridge, UK
+  options:
+    departure_time: 08:00:00
+    mode: transit
+    transit_mode: rail
+    units: imperial
+
+- platform: google_travel_time
+  name: IPS to CHM
+  api_key: AIzaSyCMWmrNNjrve445-DLSBZCcsIsPZu8_k4Q
+  origin: zone.home
+  destination: Victoria Rd, Chelmsford, UK
+  options:
+    departure_time: 08:30:00
+    mode: transit
+    transit_mode: rail
+    units: imperial
+
+- platform: yr
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed   
+

@@ -1,0 +1,70 @@
+- alias: Set light scene
+  trigger:
+    platform: state
+    entity_id: input_select.scene
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data_template:
+        variables:
+          message: "Scene: {{ states('input_select.scene') }}"
+    - service: light.hue_activate_scene
+      data_template:
+        group_name: Lounge
+        scene_name: "{{ states('input_select.scene') }}"
+
+- alias: Arm alarm
+  trigger:
+    platform: state
+    entity_id: input_select.alarm
+    to: "Arm Away"
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Activating alarm"
+    - service: alarm_control_panel.alarm_arm_away
+
+- alias: Arming set
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: armed_away
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Alarm is enabled"
+
+- alias: Disarm alarm
+  trigger:
+    platform: state
+    entity_id: input_select.alarm
+    to: "Disarm"
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Alarm is disarmed"
+    - service: alarm_control_panel.alarm_disarm
+
+- alias: Trigger alarm while armed away
+  trigger:
+    platform: state
+    entity_id: switch.motion_front
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.ha_alarm
+      state: armed_away
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Alarm"
+    - service: alarm_control_panel.alarm_trigger
+
+

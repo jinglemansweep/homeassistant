@@ -1,0 +1,53 @@
+homeassistant:
+  name: Home
+  unit_system: metric
+  time_zone: Europe/London
+  customize: !include customize.yaml
+
+frontend:
+
+http:
+  api_password: !secret http_api_password
+  trusted_networks:
+    - 10.0.2.0/24
+
+updater:
+discovery:
+conversation:
+history:
+logbook:
+sun:
+alarm_control_panel:
+  platform: manual
+
+automation: !include automation.yaml
+
+device_tracker: !include device_tracker.yaml
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
+group: !include group.yaml
+
+ifttt:
+  key: !secret ifttt_key
+
+input_select: !include input_select.yaml
+
+light:
+  platform: hue
+  host: hue.home
+
+mqtt:
+  broker: mosquitto
+
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A4V9EJ4F-if00-port0
+  debug: true
+
+script: !include script.yaml
+sensor: !include sensor.yaml
+notify: !include notify.yaml
+zone: !include zone.yaml
+

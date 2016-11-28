@@ -1,0 +1,52 @@
+default_view:
+  view: yes
+  entities:
+    - group.house
+    - input_select.alarm
+    - input_select.scene
+lounge:
+  name: Lounge
+  view: yes
+  entities:
+    - light.lounge_front_colour
+    - light.lounge_bloom_front
+    - light.lounge_light_front
+    - light.lounge_tv_light
+    - light.lounge_back_colour
+    - light.lounge_bloom_back
+    - light.lounge_back_colour
+    - light.lounge_light_front
+kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+    - light.kitchen_cabinet_light
+bedroom:
+  name: Bedroom
+  view: yes
+  entities: 
+    - light.bedroom_lamp_louis
+    - light.bedroom_lamp_sarah
+    - light.portable_colour
+hallway:
+  name: Hallway
+  view: yes
+  entities:
+    - light.hallway_downstairs_colour
+downstairs:
+  name: Downstairs
+  entities:
+    - group.lounge
+    - group.kitchen
+upstairs:
+  name: Upstairs
+  entities:
+    - group.bedroom
+    - group.hallway
+house:
+  name: House
+  entities:
+    - group.downstairs
+    - group.upstairs
+
+

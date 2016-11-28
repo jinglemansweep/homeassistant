@@ -1,0 +1,19 @@
+scene:
+  name: Lounge Scene
+  options:
+    - select...
+    - Agent Orange
+    - Manic Minor
+    - Whorehouse
+    - Tron
+    - Alien Breed
+
+alarm:
+  name: Alarm Mode
+  options:
+    - select...
+    - Arm Away
+    - Arm Home
+    - Disarm
+
+
