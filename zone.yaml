@@ -3,4 +3,7 @@
   latitude: 52.0354413
   longitude: 1.1322328
 
-
+- name: OfficeLouis
+  radius: 200
+  latitude: 52.193949
+  longitude: 0.1313424

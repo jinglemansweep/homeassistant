@@ -7,9 +7,9 @@ homeassistant:
 frontend:
 
 http:
-  api_password: !secret http_api_password
-  trusted_networks:
-    - 10.0.2.0/24
+  api_password: shredder
+#  trusted_networks:
+#    - 10.0.2.0/24
 
 updater:
 discovery:
@@ -33,6 +33,9 @@ group: !include group.yaml
 ifttt:
   key: !secret ifttt_key
 
+influxdb:
+  host: influxdb
+
 input_select: !include input_select.yaml
 
 light:
@@ -42,9 +45,10 @@ light:
 mqtt:
   broker: mosquitto
 
-rfxtrx:
-  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A4V9EJ4F-if00-port0
-  debug: true
+proximity: !include proximity.yaml
+
+zwave:
+  usb_path: /dev/ttyACM0
 
 script: !include script.yaml
 sensor: !include sensor.yaml

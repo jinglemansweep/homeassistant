@@ -6,5 +6,5 @@ sensor.yr_precipitation:
   friendly_name: Rain
 sensor.yr_wind_speed:
   friendly_name: Wind
-
-
+binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0:
+  friendly_name: Motion Downstairs
