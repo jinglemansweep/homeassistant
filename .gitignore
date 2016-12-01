@@ -1,5 +1,6 @@
 *.db
 *.log
+*.sqlite
 .google.token
 .HA_VERSION
 .uuid
@@ -8,3 +9,6 @@ known_devices.yaml
 plex.conf
 phue.conf
 secrets.yaml
+OZW_Log.txt
+zw*.xml
+
