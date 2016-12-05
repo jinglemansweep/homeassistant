@@ -19,6 +19,7 @@ logbook:
 sun:
 alarm_control_panel:
   platform: manual
+  code: !secret alarm_code
 
 automation: !include automation.yaml
 
@@ -33,8 +34,8 @@ group: !include group.yaml
 ifttt:
   key: !secret ifttt_key
 
-influxdb:
-  host: influxdb
+#influxdb:
+#  host: influxdb
 
 input_select: !include input_select.yaml
 
@@ -50,6 +51,7 @@ proximity: !include proximity.yaml
 zwave:
   usb_path: /dev/ttyACM0
 
+remote: !include remote.yaml
 script: !include script.yaml
 sensor: !include sensor.yaml
 notify: !include notify.yaml

@@ -13,19 +13,6 @@
         group_name: Lounge
         scene_name: "{{ states('input_select.scene') }}"
 
-- alias: Arm alarm (manual)
-  trigger:
-    platform: state
-    entity_id: input_select.alarm
-    to: "Arm Away"
-  action:
-    - service: script.turn_on
-      entity_id: script.notify
-      data:
-        variables:
-          message: "Activating alarm"
-    - service: alarm_control_panel.alarm_arm_away
-
 - alias: Arm alarm (timed)
   trigger:
     platform: time
@@ -57,19 +44,6 @@
       data:
         variables:
           message: "Alarm is enabled"
-
-- alias: Disarm alarm (manual)
-  trigger:
-    platform: state
-    entity_id: input_select.alarm
-    to: "Disarm"
-  action:
-    - service: script.turn_on
-      entity_id: script.notify
-      data:
-        variables:
-          message: "Alarm is disarmed"
-    - service: alarm_control_panel.alarm_disarm
 
 - alias: Disarm alarm (timed)
   trigger:

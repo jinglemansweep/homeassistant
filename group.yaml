@@ -2,8 +2,9 @@ default_view:
   view: yes
   entities:
     - group.house
-    - input_select.alarm
     - input_select.scene
+    - alarm_control_panel.ha_alarm
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
 lounge:
   name: Lounge
   view: yes
@@ -32,6 +33,7 @@ hallway:
   name: Hallway
   view: yes
   entities:
+    - light.hallway_upstairs
     - light.hallway_downstairs_colour
 downstairs:
   name: Downstairs

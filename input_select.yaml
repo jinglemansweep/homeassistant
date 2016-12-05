@@ -8,12 +8,3 @@ scene:
     - Tron
     - Alien Breed
 
-alarm:
-  name: Alarm Mode
-  options:
-    - select...
-    - Arm Away
-    - Arm Home
-    - Disarm
-
-

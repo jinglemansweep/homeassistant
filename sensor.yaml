@@ -1,6 +1,3 @@
-- platform: rfxtrx
-  automatic_add: true
-
 - platform: google_travel_time
   name: IPS to CBG
   api_key: AIzaSyCMWmrNNjrve445-DLSBZCcsIsPZu8_k4Q
@@ -29,11 +26,4 @@
     - symbol
     - precipitation
     - windSpeed   
-
-- platform: currencylayer
-  api_key: !secret currencylayer_api_key
-  base: GBP
-  quote:
-    - EUR
-    - USD
 
