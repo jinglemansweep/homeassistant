@@ -3,7 +3,5 @@
   hosts:
     - 10.0.2.32
     - 10.0.2.33
-- platform: owntracks
-  max_gps_accuracy: 200
-
+- platform: gpslogger
 

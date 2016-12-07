@@ -1,10 +1,14 @@
 - name: slack
   platform: slack
   api_key: !secret slack_api_key
-  default_channel: "#general"
+  default_channel: "#home-assistant"
   username: "HomeAssistant"
   icon: house
  
+- name: tts_sonos
+  platform: command_line
+  command: "curl http://sonos-http-api:5005/say/$(cat /dev/stdin)/10"
+
 - name: sms
   platform: twilio_sms
   account_sid: !secret twilio_account_sid
@@ -18,5 +22,4 @@
 - name: atv_nexusplayer
   platform: nfandroidtv
   host: nexusplayer.home
-
 

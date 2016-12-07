@@ -5,55 +5,27 @@ homeassistant:
   customize: !include customize.yaml
 
 frontend:
-
-http:
-  api_password: shredder
-#  trusted_networks:
-#    - 10.0.2.0/24
-
 updater:
 discovery:
 conversation:
 history:
 logbook:
 sun:
-alarm_control_panel:
-  platform: manual
-  code: !secret alarm_code
 
+alarm_control_panel: !include alarm_control_panel.yaml
 automation: !include automation.yaml
-
 device_tracker: !include device_tracker.yaml
-
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
-
+google: !include google.yaml
 group: !include group.yaml
-
-ifttt:
-  key: !secret ifttt_key
-
-#influxdb:
-#  host: influxdb
-
+http: !include http.yaml
+ifttt: !include ifttt.yaml
 input_select: !include input_select.yaml
-
-light:
-  platform: hue
-  host: hue.home
-
-mqtt:
-  broker: mosquitto
-
+light: !include light.yaml
+mqtt: !include mqtt.yaml
+notify: !include notify.yaml
 proximity: !include proximity.yaml
-
-zwave:
-  usb_path: /dev/ttyACM0
-
 remote: !include remote.yaml
 script: !include script.yaml
 sensor: !include sensor.yaml
-notify: !include notify.yaml
 zone: !include zone.yaml
-
+zwave: !include zwave.yaml
