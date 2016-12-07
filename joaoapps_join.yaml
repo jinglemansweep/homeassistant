@@ -1,0 +1,8 @@
+- name: join_louis_chrome
+  device_id: !secret join_louis_chrome_device_id
+  api_key: !secret join_louis_api_key
+
+- name: join_louis_phone
+  device_id: !secret join_louis_phone_device_id
+  api_key: !secret join_louis_api_key
+

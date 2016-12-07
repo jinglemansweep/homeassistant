@@ -20,6 +20,7 @@ group: !include group.yaml
 http: !include http.yaml
 ifttt: !include ifttt.yaml
 input_select: !include input_select.yaml
+joaoapps_join: !include joaoapps_join.yaml
 light: !include light.yaml
 mqtt: !include mqtt.yaml
 notify: !include notify.yaml

@@ -4,7 +4,17 @@
   default_channel: "#home-assistant"
   username: "HomeAssistant"
   icon: house
- 
+
+- name: join_louis_chrome
+  platform: joaoapps_join
+  device_id: !secret join_louis_chrome_device_id
+  api_key: !secret join_louis_api_key
+
+- name: join_louis_phone
+  platform: joaoapps_join
+  device_id: !secret join_louis_phone_device_id
+  api_key: !secret join_louis_api_key
+
 - name: tts_sonos
   platform: command_line
   command: "curl http://sonos-http-api:5005/say/$(cat /dev/stdin)/10"
