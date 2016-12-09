@@ -1,8 +1,8 @@
 - platform: google_travel_time
   name: IPS to CBG
-  api_key: AIzaSyCMWmrNNjrve445-DLSBZCcsIsPZu8_k4Q
+  api_key: !secret google_transit_api_key
   origin: zone.home
-  destination: Betjemen House, Cambridge, UK
+  destination: !secret office_louis
   options:
     departure_time: 08:00:00
     mode: transit
@@ -11,9 +11,9 @@
 
 - platform: google_travel_time
   name: IPS to CHM
-  api_key: AIzaSyCMWmrNNjrve445-DLSBZCcsIsPZu8_k4Q
+  api_key: !secret google_transit_api_key
   origin: zone.home
-  destination: Victoria Rd, Chelmsford, UK
+  destination: !secret office_sarah
   options:
     departure_time: 08:30:00
     mode: transit
