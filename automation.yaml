@@ -48,7 +48,7 @@
 - alias: Disarm alarm (timed)
   trigger:
     platform: time
-    after: "18:00:00"
+    after: "18:30:00"
   condition:
     condition: and
     conditions:
@@ -83,4 +83,56 @@
           message: "Alarm"
     - service: alarm_control_panel.alarm_trigger
 
+- alias: Turn off lights on work day mornings
+  trigger:
+    platform: time
+    after: "09:00:00"
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.house
+
+- alias: Turn off downstairs lights in evening on workdays
+  trigger:
+    platform: time
+    after: "23:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sun
+          - mon
+          - tue
+          - wed
+          - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs
+
+- alias: Turn off downstairs lights later in evening on weekends
+  trigger:
+    platform: time
+    after: "01:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sat
+          - sun
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs
+
+- alias: Turn on outside light after sunset
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - light.outside_front
 

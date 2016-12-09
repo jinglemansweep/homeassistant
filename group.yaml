@@ -29,17 +29,24 @@ bedroom:
     - light.bedroom_lamp_louis
     - light.bedroom_lamp_sarah
     - light.portable_colour
+    - light.bedroom_light
 hallway:
   name: Hallway
   view: yes
   entities:
     - light.hallway_upstairs
     - light.hallway_downstairs_colour
+outside:
+  name: Outside
+  view: yes
+  entities:
+    - light.outside_front
 downstairs:
   name: Downstairs
   entities:
     - group.lounge
     - group.kitchen
+    - group.outside
 upstairs:
   name: Upstairs
   entities:
