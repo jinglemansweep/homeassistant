@@ -1,15 +1,14 @@
 - name: Home
   radius: 200
-  latitude: 52.0354413
-  longitude: 1.1322328
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
 
 - name: Near Home
   radius: 1000
-  latitude: 52.0354413
-  longitude: 1.1322328
-
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
 
 - name: OfficeLouis
   radius: 200
-  latitude: 52.193949
-  longitude: 0.1313424
+  latitude: !secret zone_office_louis_latitude
+  longitude: !secret zone_office_louis_longitude
