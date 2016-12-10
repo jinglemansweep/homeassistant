@@ -15,10 +15,6 @@
   device_id: !secret join_louis_phone_device_id
   api_key: !secret join_louis_api_key
 
-- name: tts_sonos
-  platform: command_line
-  command: "curl http://sonos-http-api:5005/say/$(cat /dev/stdin)/10"
-
 - name: sms
   platform: twilio_sms
   account_sid: !secret twilio_account_sid

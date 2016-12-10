@@ -11,6 +11,7 @@ conversation:
 history:
 logbook:
 sun:
+tts_service:
 
 alarm_control_panel: !include alarm_control_panel.yaml
 apcupsd: !include apcupsd.yaml

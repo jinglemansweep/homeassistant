@@ -11,4 +11,4 @@ phue.conf
 secrets.yaml
 OZW_Log.txt
 zw*.xml
-
+**/__pycache__

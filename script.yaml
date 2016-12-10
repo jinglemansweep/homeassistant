@@ -9,9 +9,11 @@ notify:
     - service: notify.join_louis_phone
       data_template:
         message: "{{ message }}"
-    - service: notify.tts_sonos
+    - service: tts_service.say
       data_template:
-        message: "{{ message }}"
+        player: "Portable"
+        text: "{{ message }}"
+        volume: 20
     - service: notify.atv_shield
       data_template:
         message: "{{ message }}"
