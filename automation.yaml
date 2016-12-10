@@ -68,7 +68,7 @@
 - alias: Trigger alarm if motion downstairs
   trigger:
     platform: state
-    entity_id: binary_sensor.zw100_sensor_2_0
+    entity_id: binary_sensor.lounge_sensor_3_0
     to: "on"
   condition:
     - condition: state

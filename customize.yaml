@@ -6,15 +6,17 @@ sensor.yr_precipitation:
   friendly_name: Rain
 sensor.yr_wind_speed:
   friendly_name: Wind
-binary_sensor.zw100_sensor_2_0:
-  friendly_name: Motion (Downstairs)
-sensor.zw100_temperature_2_1:
-  friendly_name: Temperature (Downstairs)
-sensor.zw100_luminance_2_3:
-  friendly_name: Luminance (Downstairs)
-sensor.zw100_relative_humidity_2_5:
-  friendly_name: Humidity (Downstairs)
-sensor.zw100_ultraviolet_2_27:
-  friendly_name: UV (Downstairs)
+binary_sensor.lounge_sensor_3_0:
+  friendly_name: Motion (Lounge)
+sensor.lounge_burglar_3_10:
+  friendly_name: Vibration (Lounge)
+sensor.lounge_temperature_3_1:
+  friendly_name: Temperature (Lounge)
+sensor.lounge_luminance_3_3:
+  friendly_name: Luminance (Lounge)
+sensor.lounge_relative_humidity_3_5:
+  friendly_name: Humidity (Lounge)
+sensor.lounge_ultraviolet_3_27:
+  friendly_name: UV (Lounge)
 device_tracker.lgd855a5762c20:
   friendly_name: Louis (GPS)
