@@ -27,3 +27,9 @@
     - precipitation
     - windSpeed   
 
+- platform: apcupsd
+  resources:
+    - bcharge
+    - status
+    - timeleft
+

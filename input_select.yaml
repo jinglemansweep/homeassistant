@@ -1,10 +1,11 @@
 scene:
   name: Lounge Scene
   options:
-    - select...
+    - Select
     - Agent Orange
     - Manic Minor
     - Whorehouse
     - Tron
     - Alien Breed
+  initial: Select
 

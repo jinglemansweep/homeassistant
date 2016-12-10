@@ -68,9 +68,8 @@
 - alias: Trigger alarm if motion downstairs
   trigger:
     platform: state
-    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
-    from: "0"
-    to: "8"
+    entity_id: binary_sensor.zw100_sensor_2_0
+    to: "on"
   condition:
     - condition: state
       entity_id: alarm_control_panel.ha_alarm
@@ -91,6 +90,34 @@
     - service: homeassistant.turn_off
       entity_id:
         - group.house
+
+- alias: Set evening lighting scene
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: light.hue_activate_scene
+      data:
+        group_name: Lounge
+        scene_name: Relax
+    - service: light.hue_activate_scene
+      data:
+        group_name: Kitchen
+        scene_name: Relax
+
+- alias: Keep hallway light on and dimmed all evening
+  trigger:
+    platform: time
+    minutes: "/5"
+  condition:
+    - condition: sun
+      after: sunset
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.hallway_downstairs_colour
+        color_name: red
+        brightness: 10
 
 - alias: Turn off downstairs lights in evening on workdays
   trigger:
@@ -126,6 +153,7 @@
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs
+        - light.outside_front
 
 - alias: Turn on outside light after sunset
   trigger:

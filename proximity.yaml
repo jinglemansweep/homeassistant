@@ -2,7 +2,7 @@ home:
   ignored_zones:
     - OfficeLouis
   devices:
-    - device_tracker.owntracks_louis
+    - device_tracker.lgd855a5762c20
   tolerance: 50
   unit_of_measurement: mi
 

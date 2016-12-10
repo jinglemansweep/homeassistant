@@ -4,7 +4,7 @@ default_view:
     - group.house
     - input_select.scene
     - alarm_control_panel.ha_alarm
-    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    - binary_sensor.zw100_sensor_2_0
 lounge:
   name: Lounge
   view: yes
@@ -34,8 +34,12 @@ hallway:
   name: Hallway
   view: yes
   entities:
-    - light.hallway_upstairs
     - light.hallway_downstairs_colour
+landing:
+  name: Landing
+  view: yes
+  entities:
+    - light.hallway_upstairs
 outside:
   name: Outside
   view: yes
@@ -46,12 +50,12 @@ downstairs:
   entities:
     - group.lounge
     - group.kitchen
-    - group.outside
+    - group.hallway
 upstairs:
   name: Upstairs
   entities:
     - group.bedroom
-    - group.hallway
+    - group.landing
 house:
   name: House
   entities:
