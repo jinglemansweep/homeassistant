@@ -1,1 +1,3 @@
-host: influxdb
+  host: influxdb
+  username: hass
+  password: hass

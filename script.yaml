@@ -13,7 +13,7 @@ notify:
       data_template:
         player: "Portable"
         text: "{{ message }}"
-        volume: 20
+        volume: 75
     - service: notify.atv_shield
       data_template:
         message: "{{ message }}"

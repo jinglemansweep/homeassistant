@@ -30,8 +30,20 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Activating alarm by schedule"
+          message: "Activating security alarm by schedule"
     - service: alarm_control_panel.alarm_arm_away
+
+- alias: Arming started
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: pending
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Activating security alarm!"
 
 - alias: Arming set
   trigger:
@@ -43,7 +55,19 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Alarm is enabled"
+          message: "Security alarm has been set!"
+
+- alias: Disarm start
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: disarmed
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Security alarm has been disarmed!"
 
 - alias: Disarm alarm (timed)
   trigger:
@@ -62,13 +86,13 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Alarm is disarmed by schedule"
+          message: "Deactivating security alarm by schedule"
     - service: alarm_control_panel.alarm_disarm
 
 - alias: Trigger alarm if motion downstairs
   trigger:
     platform: state
-    entity_id: binary_sensor.lounge_sensor_3_0
+    entity_id: binary_sensor.zw100_lounge_sensor_3_0
     to: "on"
   condition:
     - condition: state
