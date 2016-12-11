@@ -4,7 +4,8 @@ default_view:
     - group.house
     - input_select.scene
     - alarm_control_panel.ha_alarm
-    - binary_sensor.lounge_sensor_3_0
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    - sensor.aeotec_zw100_multisensor_6_temperature_2_1
 lounge:
   name: Lounge
   view: yes

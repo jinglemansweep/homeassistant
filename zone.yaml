@@ -3,11 +3,6 @@
   latitude: !secret zone_home_latitude
   longitude: !secret zone_home_longitude
 
-- name: Near Home
-  radius: 1000
-  latitude: !secret zone_home_latitude
-  longitude: !secret zone_home_longitude
-
 - name: OfficeLouis
   radius: 200
   latitude: !secret zone_office_louis_latitude
