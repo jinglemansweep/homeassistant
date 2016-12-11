@@ -10,5 +10,6 @@ plex.conf
 phue.conf
 secrets.yaml
 OZW_Log.txt
+www
 zw*.xml
 **/__pycache__

@@ -3,6 +3,8 @@ default_view:
   entities:
     - group.house
     - input_select.scene
+    - device_tracker.phonelouishome
+    - device_tracker.phonesarahhome
     - alarm_control_panel.ha_alarm
     - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
