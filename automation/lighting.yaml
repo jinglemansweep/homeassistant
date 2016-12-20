@@ -1,0 +1,97 @@
+- alias: Set light scene
+  trigger:
+    platform: state
+    entity_id: input_select.scene
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data_template:
+        variables:
+          message: "Scene: {{ states('input_select.scene') }}"
+    - service: light.hue_activate_scene
+      data_template:
+        group_name: Lounge
+        scene_name: "{{ states('input_select.scene') }}"
+
+- alias: Set evening lighting scene
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: light.hue_activate_scene
+      data:
+        group_name: Lounge
+        scene_name: Relax
+    - service: light.hue_activate_scene
+      data:
+        group_name: Kitchen
+        scene_name: Relax
+
+- alias: Keep hallway light on and dimmed all evening
+  trigger:
+    platform: time
+    minutes: "0"
+  condition:
+    - condition: sun
+      after: sunset
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.hallway_downstairs_colour
+        color_name: red
+        brightness: 10
+
+- alias: Turn off downstairs lights in evening on workdays
+  trigger:
+    platform: time
+    after: "23:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sun
+          - mon
+          - tue
+          - wed
+          - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs
+
+- alias: Turn off downstairs lights later in evening on weekends
+  trigger:
+    platform: time
+    after: "01:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - sat
+          - sun
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs
+        - group.outside
+
+- alias: Turn on outside light after sunset
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - group.outside
+
+- alias: Turn off outside light during the evening
+  trigger:
+    platform: time
+    after: "21:00:00"
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.outside
+

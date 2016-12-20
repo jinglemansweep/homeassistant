@@ -1,0 +1,93 @@
+- alias: Arm alarm (timed)
+  trigger:
+    platform: time
+    after: "09:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - thu
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Activating security alarm by schedule"
+    - service: alarm_control_panel.alarm_arm_away
+
+- alias: Arming started
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: pending
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Activating security alarm!"
+
+- alias: Arming set
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: armed_away
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Security alarm has been set!"
+
+- alias: Disarm start
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: disarmed
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Security alarm has been disarmed!"
+
+- alias: Disarm alarm (timed)
+  trigger:
+    platform: time
+    after: "18:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - thu
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Deactivating security alarm by schedule"
+    - service: alarm_control_panel.alarm_disarm
+
+- alias: Trigger alarm if motion downstairs
+  trigger:
+    platform: state
+    entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    to: "on"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.ha_alarm
+      state: armed_away
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data:
+        variables:
+          message: "Alarm"
+    - service: alarm_control_panel.alarm_trigger
+

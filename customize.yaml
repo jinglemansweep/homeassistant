@@ -14,3 +14,6 @@ sensor.yr_wind_speed:
   friendly_name: Wind
 device_tracker.lgd855a5762c20:
   friendly_name: Louis (GPS)
+device_tracker.4df177d065266f8b:
+  friendly_name: Sarah (GPS)
+ 

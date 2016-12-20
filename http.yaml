@@ -1,4 +1,5 @@
-  api_password: terQwKOm5gCPhy9EDH57
+  api_password: !secret http_api_password
+  base_url: !secret http_base_url
   trusted_networks:
     - 10.0.2.0/24
 

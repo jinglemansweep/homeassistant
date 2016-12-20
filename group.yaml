@@ -3,8 +3,8 @@ default_view:
   entities:
     - group.house
     - input_select.scene
-    - device_tracker.phonelouishome
-    - device_tracker.phonesarahhome
+    - device_tracker.lgd855a5762c20
+    - device_tracker.4df177d065266f8b
     - alarm_control_panel.ha_alarm
     - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
@@ -48,6 +48,7 @@ outside:
   view: yes
   entities:
     - light.outside_front
+    - camera.generic_camera
 downstairs:
   name: Downstairs
   entities:
@@ -64,5 +65,4 @@ house:
   entities:
     - group.downstairs
     - group.upstairs
-
 

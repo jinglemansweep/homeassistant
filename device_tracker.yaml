@@ -4,4 +4,6 @@
     - 10.0.2.33
   home_interval: 10
 - platform: gpslogger
-
+- platform: asuswrt
+  host: 10.0.2.1
+  password: !secret asuswrt_password
