@@ -25,13 +25,15 @@ ifttt: !include ifttt.yaml
 influxdb: !include influxdb.yaml
 input_select: !include input_select.yaml
 joaoapps_join: !include joaoapps_join.yaml
+logger: !include logger.yaml
 light: !include light.yaml
 mqtt: !include mqtt.yaml
 notify: !include notify.yaml
 proximity: !include proximity.yaml
-remote: !include remote.yaml
-script: !include script.yaml
+#remote: !include remote.yaml
+script: !include_dir_named scripts
 sensor: !include sensor.yaml
+switch: !include switch.yaml
 tts: !include tts.yaml
 zone: !include zone.yaml
 zwave: !include zwave.yaml

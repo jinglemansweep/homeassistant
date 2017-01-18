@@ -5,6 +5,7 @@
 .HA_VERSION
 .uuid
 google_calendars.yaml
+html5_push_registrations.conf
 known_devices.yaml
 plex.conf
 phue.conf

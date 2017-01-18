@@ -1,9 +1,6 @@
-- platform: nmap_tracker
-  hosts:
-    - 10.0.2.32
-    - 10.0.2.33
-  home_interval: 10
-- platform: gpslogger
 - platform: asuswrt
-  host: 10.0.2.1
+  track_new_devices: false
+  host: !secret asuswrt_host
+  username: !secret asuswrt_username
   password: !secret asuswrt_password
+  interval_seconds: 900

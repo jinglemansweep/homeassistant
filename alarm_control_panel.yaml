@@ -1,2 +1,4 @@
+  name: house
   platform: manual
+  disarm_after_trigger: false
   code: !secret alarm_code

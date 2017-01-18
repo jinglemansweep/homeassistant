@@ -1,0 +1,15 @@
+  - platform: mqtt
+    name: Sleeping
+    command_topic: ha/louis/sleeping
+    state_topic: ha/louis/sleeping
+    payload_on: "yes"
+    payload_off: "no"
+    retain: true
+
+  - platform: mqtt
+    name: Home
+    command_topic: ha/louis/home
+    state_topic: ha/louis/home
+    payload_on: "yes"
+    payload_off: "no"
+    retain: true

@@ -1,68 +1,140 @@
 default_view:
+  name: DEFAULT
   view: yes
   entities:
-    - group.house
-    - input_select.scene
+    - group.inputs_home
+    - group.lounge_home
+    - group.kitchen_home
+    - group.bedroom_home
+    - group.other_lights
     - device_tracker.lgd855a5762c20
     - device_tracker.4df177d065266f8b
-    - alarm_control_panel.ha_alarm
+    - alarm_control_panel.house
+    - sensor.ups_time_left
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+inputs_home:
+  name: Inputs
+  entities:
+    - script.announce
+    - switch.sleeping
+    - switch.home
+
+lounge_home:
+  name: Lounge
+  entities:
+    - group.lounge_lamps_front
+    - group.lounge_lamps_back
+    - group.lounge_lights
     - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+ 
 lounge:
   name: Lounge
   view: yes
   entities:
-    - light.lounge_front_colour
-    - light.lounge_bloom_front
-    - light.lounge_light_front
-    - light.lounge_tv_light
+    - group.lounge_lamps_front
+    - group.lounge_lamps_back
+    - group.lounge_lights
+    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+ 
+lounge_lamps_back:
+  name: Lounge Lamps (Desk)
+  entities:
     - light.lounge_back_colour
     - light.lounge_bloom_back
-    - light.lounge_back_colour
+
+lounge_lamps_front:
+  name: Lounge Lamps (Couch)
+  entities:
+    - light.lounge_front_colour
+    - light.lounge_bloom_front
+    - light.lounge_tv_light
+
+lounge_lights:
+  name: Lounge Lights
+  entities:
     - light.lounge_light_front
+    - light.lounge_light_back
+
 kitchen:
   name: Kitchen
   view: yes
   entities:
     - light.kitchen_cabinet_light
+
+kitchen_home:
+  name: Kitchen
+  entities:
+    - light.kitchen_cabinet_light
+
 bedroom:
   name: Bedroom
   view: yes
   entities: 
+    - group.bedroom_lamps
+    - group.bedroom_lights
+
+bedroom_home:
+  name: Bedroom
+  entities: 
+    - group.bedroom_lamps
+    - group.bedroom_lights
+
+bedroom_lamps:
+  name: Bedroom Lamps
+  entities:
     - light.bedroom_lamp_louis
     - light.bedroom_lamp_sarah
     - light.portable_colour
-    - light.bedroom_light
-hallway:
-  name: Hallway
-  view: yes
+
+bedroom_lights:
+  name: Bedroom Lights
   entities:
-    - light.hallway_downstairs_colour
-landing:
-  name: Landing
-  view: yes
+    - light.bedroom_light
+
+other_lights:
+  name: Other Lights
+  view: no
   entities:
     - light.hallway_upstairs
+    - light.hallway_downstairs_colour
+    - light.outside_front
+
+hallway:
+  name: Hallway
+  entities:
+    - light.hallway_downstairs_colour
+
+landing:
+  name: Landing
+  entities:
+    - light.hallway_upstairs
+
 outside:
   name: Outside
-  view: yes
   entities:
     - light.outside_front
     - camera.generic_camera
+
 downstairs:
   name: Downstairs
   entities:
     - group.lounge
     - group.kitchen
     - group.hallway
+
 upstairs:
   name: Upstairs
   entities:
     - group.bedroom
     - group.landing
+
 house:
   name: House
   entities:
     - group.downstairs
     - group.upstairs
-

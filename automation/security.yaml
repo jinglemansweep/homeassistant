@@ -17,11 +17,12 @@
         variables:
           message: "Activating security alarm by schedule"
     - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.house
 
 - alias: Arming started
   trigger:
     platform: state
-    entity_id: alarm_control_panel.ha_alarm
+    entity_id: alarm_control_panel.house
     state: pending
   action:
     - service: script.turn_on
@@ -33,7 +34,7 @@
 - alias: Arming set
   trigger:
     platform: state
-    entity_id: alarm_control_panel.ha_alarm
+    entity_id: alarm_control_panel.house
     state: armed_away
   action:
     - service: script.turn_on
@@ -45,7 +46,7 @@
 - alias: Disarm start
   trigger:
     platform: state
-    entity_id: alarm_control_panel.ha_alarm
+    entity_id: alarm_control_panel.house
     state: disarmed
   action:
     - service: script.turn_on
@@ -73,6 +74,7 @@
         variables:
           message: "Deactivating security alarm by schedule"
     - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
 
 - alias: Trigger alarm if motion downstairs
   trigger:
@@ -81,7 +83,7 @@
     to: "on"
   condition:
     - condition: state
-      entity_id: alarm_control_panel.ha_alarm
+      entity_id: alarm_control_panel.house
       state: armed_away
   action:
     - service: script.turn_on
@@ -89,5 +91,6 @@
       data:
         variables:
           message: "Alarm"
-    - service: alarm_control_panel.alarm_trigger
+    - service: alarm_control_panel.alarm_triggera
+      entity_id: alarm_control_panel.house
 
