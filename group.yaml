@@ -30,7 +30,19 @@ lounge_home:
     - group.lounge_lights
     - sensor.aeotec_zw100_multisensor_6_burglar_2_10
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
- 
+
+media:
+  name: Media
+  view: yes
+  entities:
+    - media_player.bedroom
+    - media_player.kitchen
+    - media_player.living_room
+    - media_player.living_room_2
+    - media_player.nexus_player
+    - media_player.portable
+    - media_player.shield_android_tv
+
 lounge:
   name: Lounge
   view: yes
@@ -38,7 +50,7 @@ lounge:
     - group.lounge_lamps_front
     - group.lounge_lamps_back
     - group.lounge_lights
-    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    - sensor.aeotec_zw100_multisensor_6_burglar_2_10
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
  
 lounge_lamps_back:

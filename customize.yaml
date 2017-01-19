@@ -1,13 +1,27 @@
 alarm_control_panel.house:
   friendly_name: HouseAlarm
 sensor.aeotec_zw100_multisensor_6_burglar_2_10:
-  friendly_name: Lounge
+  friendly_name: Motion Lounge
 sensor.aeotec_zw100_multisensor_6_temperature_2_1:
-  friendly_name: Temp
+  friendly_name: Temp Lounge
 device_tracker.lk_phone:
   friendly_name: Louis
 device_tracker.sc_phone:
   friendly_name: Sarah
+media_player.bedroom:
+  friendly_name: Bedroom Cast
+media_player.kitchen:
+  friendly_name: Kitchen Cast
+media_player.living_room:
+  friendly_name: Lounge Sonos
+media_player.living_room_2:
+  friendly_name: Lounge Cast
+media_player.nexus_player:
+  friendly_name: Bedroom ATV
+media_player.portable:
+  friendly_name: Portable Sonos
+media_player.shield_android_tv:
+  friendly_name: Lounge ATV
 sensor.speedtest_download:
   friendly_name: Download
 sensor.speedtest_upload:

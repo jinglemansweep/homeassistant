@@ -81,7 +81,7 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Alarm"
+          message: "Unauthorised entry to this house has been detected. The residents have been informed. Please leave the property now."
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.house
 

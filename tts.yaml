@@ -1,3 +1,5 @@
-  - platform: google
-    cache: true
-    cache_dir: /tmp/tts
+  - platform: voicerss
+    api_key: !secret voicerss_api_key
+    language: en-gb
+    format: 44khz_16bit_mono
+    rate: 5
