@@ -7,8 +7,8 @@ default_view:
     - group.kitchen_home
     - group.bedroom_home
     - group.other_lights
-    - device_tracker.lgd855a5762c20
-    - device_tracker.4df177d065266f8b
+    - device_tracker.lk_phone
+    - device_tracker.sc_phone
     - alarm_control_panel.house
     - sensor.ups_time_left
     - sensor.speedtest_download
@@ -28,7 +28,7 @@ lounge_home:
     - group.lounge_lamps_front
     - group.lounge_lamps_back
     - group.lounge_lights
-    - binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
+    - sensor.aeotec_zw100_multisensor_6_burglar_2_10
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
  
 lounge:
@@ -138,3 +138,10 @@ house:
   entities:
     - group.downstairs
     - group.upstairs
+
+residents:
+  name: Residents
+  entities:
+    - device_tracker.lk_phone
+    - device_tracker.sc_phone
+

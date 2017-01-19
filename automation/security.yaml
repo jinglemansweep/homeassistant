@@ -11,11 +11,6 @@
           - tue
           - thu
   action:
-    - service: script.turn_on
-      entity_id: script.notify
-      data:
-        variables:
-          message: "Activating security alarm by schedule"
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.house
 
@@ -68,19 +63,15 @@
           - tue
           - thu
   action:
-    - service: script.turn_on
-      entity_id: script.notify
-      data:
-        variables:
-          message: "Deactivating security alarm by schedule"
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.house
 
 - alias: Trigger alarm if motion downstairs
   trigger:
     platform: state
-    entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0
-    to: "on"
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
+    from: "0"
+    to: "8"
   condition:
     - condition: state
       entity_id: alarm_control_panel.house
@@ -91,6 +82,6 @@
       data:
         variables:
           message: "Alarm"
-    - service: alarm_control_panel.alarm_triggera
+    - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.house
 

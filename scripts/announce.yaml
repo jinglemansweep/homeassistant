@@ -11,15 +11,17 @@ sequence:
         {% else %}
         Good evening.
         {% endif %}
-        It's currently {{states.sensor.dark_sky_summary.state}} and {{states.sensor.dark_sky_temperature.state|round}} degrees.
         Today will be {{states.sensor.dark_sky_hourly_summary.state|replace(".", "")}}, with a high of {{states.sensor.dark_sky_daily_high_temperature.state|round}} degrees.
         {% if now().strftime("%H")|int < 9 and now().strftime("%w")|int > 0 and now().strftime("%w")|int < 6 %}
           The commute time to Cambridge is {{states.sensor.ips_to_cbg.attributes.duration}}
           and for Chelmsford, it is {{states.sensor.ips_to_chm.attributes.duration}}.
         {% endif %}
         Don't forget about {{states.calendar.reminders.attributes.message}}
-        on {{as_timestamp(states.calendar.reminders.attributes.start_time)|timestamp_custom("%A %d %B at %H %M")}}.
+        on {{as_timestamp(states.calendar.reminders.attributes.start_time)|timestamp_custom("%A %d %B at %-I:%M %p")}}.
         Also, it's {{states.calendar.birthdays.attributes.message}}
         on {{as_timestamp(states.calendar.birthdays.attributes.start_time)|timestamp_custom("%A %d %B")}}.
+        {% if is_state("sensor.iss_visible", "True") %}
+          If you are interested, the International Space Station is currently visible in the night sky.
+        {% endif %}
  
 

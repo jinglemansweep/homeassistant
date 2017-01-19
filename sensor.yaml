@@ -67,3 +67,5 @@
     - ping
     - download
     - upload
+
+- platform: iss

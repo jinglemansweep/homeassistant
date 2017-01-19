@@ -1,6 +1,8 @@
-- platform: asuswrt
+- platform: ping
   track_new_devices: false
-  host: !secret asuswrt_host
-  username: !secret asuswrt_username
-  password: !secret asuswrt_password
-  interval_seconds: 900
+  count: 3
+  consider_home: 30
+  interval: 5
+  hosts:
+    lk_phone: !secret ip_lk_phone
+    sc_phone: !secret ip_sc_phone

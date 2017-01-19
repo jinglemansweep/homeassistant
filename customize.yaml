@@ -1,18 +1,18 @@
 alarm_control_panel.house:
-  friendly_name: House Alarm
-binary_sensor.aeotec_zw100_multisensor_6_sensor_2_0:
-  friendly_name: Motion
+  friendly_name: HouseAlarm
+sensor.aeotec_zw100_multisensor_6_burglar_2_10:
+  friendly_name: Lounge
 sensor.aeotec_zw100_multisensor_6_temperature_2_1:
   friendly_name: Temp
-device_tracker.lgd855a5762c20:
+device_tracker.lk_phone:
   friendly_name: Louis
-device_tracker.4df177d065266f8b:
+device_tracker.sc_phone:
   friendly_name: Sarah
 sensor.speedtest_download:
-  friendly_name: WAN Down
+  friendly_name: Download
 sensor.speedtest_upload:
-  friendly_name: WAN Up
+  friendly_name: Upload
 sensor.speedtest_ping:
-  friendly_name: WAN Ping
+  friendly_name: Ping
 sensor.ups_time_left:
   friendly_name: UPS Time
