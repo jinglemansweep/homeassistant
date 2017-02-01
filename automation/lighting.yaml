@@ -17,6 +17,10 @@
   trigger:
     platform: sun
     event: sunset
+  condition:
+    - condition: state
+      entity_id: group.residents
+      state: not_home
   action:
     - service: light.hue_activate_scene
       data:
@@ -26,20 +30,6 @@
       data:
         group_name: Kitchen
         scene_name: Relax
-
-- alias: Keep hallway light on and dimmed all evening
-  trigger:
-    platform: time
-    minutes: "0"
-  condition:
-    - condition: sun
-      after: sunset
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.hallway_downstairs_colour
-        color_name: red
-        brightness: 10
 
 - alias: Turn off downstairs lights in evening on workdays
   trigger:
@@ -94,4 +84,5 @@
     - service: homeassistant.turn_off
       entity_id:
         - group.outside
+
 

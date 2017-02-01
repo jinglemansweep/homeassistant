@@ -1,2 +1,6 @@
+- platform: ffmpeg
+  name: lounge
+  input: -rtsp_transport tcp -i rtsp://10.0.2.211:554/ch0_0.h264
 - platform: generic
+  name: external
   still_image_url: !secret cctv_image_url

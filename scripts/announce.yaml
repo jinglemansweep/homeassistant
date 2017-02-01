@@ -1,6 +1,6 @@
 alias: Jarvis Greeting
 sequence:
-  - service: tts.voicerss_say
+  - service: tts.amazon_polly_say
     data_template:
       entity_id: media_player.portable
       message: >

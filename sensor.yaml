@@ -1,3 +1,6 @@
+- platform: rfxtrx
+  automatic_add: true
+
 - platform: google_travel_time
   name: IPS to CBG
   api_key: !secret google_transit_api_key
@@ -68,4 +71,3 @@
     - download
     - upload
 
-- platform: iss

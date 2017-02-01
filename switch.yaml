@@ -1,3 +1,25 @@
+  - platform: rfxtrx
+    automatic_add: true
+    devices:
+      0a140011f4c0a00a000050:
+        name: door_front
+      0a140087f371df01010050:
+        name: remote_a1
+      0a140043f371df02000050:
+        name: remote_a2
+      0a140090f371df03010060:
+        name: remote_a3
+      0a140092f371df04010060:
+        name: remote_a4
+      0a140052f371df05000050:
+        name: remote_b1
+      0a14003df371df06000060:
+        name: remote_b2
+      0a140053f371df07000050:
+        name: remote_b3
+      0a140054f371df08000050:
+        name: remote_b4
+      
   - platform: mqtt
     name: Sleeping
     command_topic: ha/louis/sleeping

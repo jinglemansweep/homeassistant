@@ -4,6 +4,8 @@ sensor.aeotec_zw100_multisensor_6_burglar_2_10:
   friendly_name: Motion Lounge
 sensor.aeotec_zw100_multisensor_6_temperature_2_1:
   friendly_name: Temp Lounge
+switch.door_front:
+  friendly_name: Front Door
 device_tracker.lk_phone:
   friendly_name: Louis
 device_tracker.sc_phone:

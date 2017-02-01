@@ -16,6 +16,7 @@ tts_service:
 alarm_control_panel: !include alarm_control_panel.yaml
 apcupsd: !include apcupsd.yaml
 automation: !include_dir_merge_list automation
+binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 device_tracker: !include device_tracker.yaml
 google: !include google.yaml
@@ -23,14 +24,17 @@ group: !include group.yaml
 http: !include http.yaml
 ifttt: !include ifttt.yaml
 influxdb: !include influxdb.yaml
+input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
 joaoapps_join: !include joaoapps_join.yaml
 logger: !include logger.yaml
 light: !include light.yaml
+microsoft_face: !include microsoft_face.yaml
 mqtt: !include mqtt.yaml
 notify: !include notify.yaml
 proximity: !include proximity.yaml
 #remote: !include remote.yaml
+rfxtrx: !include rfxtrx.yaml
 script: !include_dir_named scripts
 sensor: !include sensor.yaml
 switch: !include switch.yaml

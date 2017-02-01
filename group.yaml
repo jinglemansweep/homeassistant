@@ -19,8 +19,7 @@ inputs_home:
   name: Inputs
   entities:
     - script.announce
-    - switch.sleeping
-    - switch.home
+    - input_boolean.override
 
 lounge_home:
   name: Lounge
@@ -52,7 +51,8 @@ lounge:
     - group.lounge_lights
     - sensor.aeotec_zw100_multisensor_6_burglar_2_10
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
- 
+    - camera.lounge
+
 lounge_lamps_back:
   name: Lounge Lamps (Desk)
   entities:
@@ -109,13 +109,14 @@ bedroom_lights:
     - light.bedroom_light
 
 other_lights:
-  name: Other Lights
+  name: Other
   view: no
   entities:
     - light.hallway_upstairs
     - light.hallway_downstairs_colour
     - light.outside_front
-
+    - switch.door_front
+ 
 hallway:
   name: Hallway
   entities:

@@ -9,7 +9,7 @@ sequence:
   - service: notify.join_louis_phone
     data_template:
       message: "{{ message }}"
-  - service: tts.voicerss_say
+  - service: tts.amazon_polly_say
     data_template:
       entity_id: "media_player.portable"
       message: "{{ message }}"
