@@ -31,7 +31,7 @@
         group_name: Kitchen
         scene_name: Relax
 
-- alias: Turn off downstairs lights in evening on workdays
+- alias: Turn off downstairs lights (and subwoofer) in evening on workdays
   trigger:
     platform: time
     after: "23:30:00"
@@ -49,8 +49,9 @@
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs
+        - group.loud_things
 
-- alias: Turn off downstairs lights later in evening on weekends
+- alias: Turn off downstairs lights (and subwoofer) later in evening on weekends
   trigger:
     platform: time
     after: "01:00:00"
@@ -65,7 +66,7 @@
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs
-        - group.outside
+        - group.loud_things
 
 - alias: Turn on outside light after sunset
   trigger:

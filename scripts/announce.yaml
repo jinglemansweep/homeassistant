@@ -1,4 +1,4 @@
-alias: Jarvis Greeting
+alias: Current Status
 sequence:
   - service: tts.amazon_polly_say
     data_template:

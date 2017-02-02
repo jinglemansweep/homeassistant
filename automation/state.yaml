@@ -1,0 +1,26 @@
+- alias: Override
+  trigger:
+    platform: state
+    entity_id: input_boolean.override
+  action:
+    - service: script.turn_on
+      entity_id: script.notify
+      data_template:
+        variables:
+          message: >
+            {% if trigger.to_state.state == 'on' %}
+              Manual override enabled. No further automation actions will occur until 6am tomorrow morning.
+            {% else %}
+              Manual override disabled. Normal operations will now resume.
+            {% endif %}
+    - service: script.turn_on
+      entity_id: script.flash
+
+- alias: Override Timeout
+  trigger:
+    platform: time
+    after: '06:00:00'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.override
+

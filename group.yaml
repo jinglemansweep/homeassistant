@@ -77,11 +77,13 @@ kitchen:
   view: yes
   entities:
     - light.kitchen_cabinet_light
+    - switch.kitchen_fairy_lights
 
 kitchen_home:
   name: Kitchen
   entities:
     - light.kitchen_cabinet_light
+    - switch.kitchen_fairy_lights
 
 bedroom:
   name: Bedroom
@@ -116,6 +118,7 @@ other_lights:
     - light.hallway_downstairs_colour
     - light.outside_front
     - switch.door_front
+    - switch.away
  
 hallway:
   name: Hallway
@@ -146,11 +149,23 @@ upstairs:
     - group.bedroom
     - group.landing
 
+living_area:
+  name: Living Area
+  entities:
+    - group.lounge
+    - group.kitchen
+
 house:
   name: House
   entities:
     - group.downstairs
     - group.upstairs
+
+alarm_lights:
+  name: Alarm Lights
+  entities:
+    - light.lounge_tv_light
+    - light.kitchen_cabinet_light
 
 residents:
   name: Residents
@@ -158,3 +173,8 @@ residents:
     - device_tracker.lk_phone
     - device_tracker.sc_phone
 
+loud_things:
+  name: Loud Things
+  entities:
+    - switch.subwoofer
+ 

@@ -1,18 +1,46 @@
-- alias: Arm alarm (timed)
+- alias: Arm alarm (tracking)
   trigger:
-    platform: time
-    after: "09:00:00"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - thu
+    platform: state
+    entity_id: group.residents
+    state: not_home
   action:
     - service: alarm_control_panel.alarm_arm_away
       entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
+
+- alias: Arm alarm (away)
+  trigger:
+    platform: state
+    entity_id: switch.away
+    state: "on"
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
+
+- alias: Disarm alarm (tracking)
+  trigger:
+    platform: state
+    entity_id: group.residents
+    state: home
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
+
+- alias: Disarm alarm (away)
+  trigger:
+    platform: state
+    entity_id: switch.away
+    state: "off"
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
 
 - alias: Arming started
   trigger:
@@ -24,7 +52,7 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Activating security alarm!"
+          message: "Activating security alarm"
 
 - alias: Arming set
   trigger:
@@ -36,7 +64,7 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Security alarm has been set!"
+          message: "Security alarm has been set"
 
 - alias: Disarm start
   trigger:
@@ -48,23 +76,7 @@
       entity_id: script.notify
       data:
         variables:
-          message: "Security alarm has been disarmed!"
-
-- alias: Disarm alarm (timed)
-  trigger:
-    platform: time
-    after: "18:30:00"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - thu
-  action:
-    - service: alarm_control_panel.alarm_disarm
-      entity_id: alarm_control_panel.house
+          message: "Security alarm has been disabled"
 
 - alias: Trigger alarm if motion downstairs
   trigger:
