@@ -1,12 +1,14 @@
 default_view:
   name: DEFAULT
+  icon: mdi:home
   view: yes
   entities:
     - group.inputs_home
     - group.lounge_home
     - group.kitchen_home
     - group.bedroom_home
-    - group.other_lights
+    - group.outside_home
+    - group.hallway_home
     - device_tracker.lk_phone
     - device_tracker.sc_phone
     - alarm_control_panel.house
@@ -17,21 +19,16 @@ default_view:
 
 inputs_home:
   name: Inputs
+  icon: mdi:toggle-switch
+  control: hidden
   entities:
     - script.announce
     - input_boolean.override
-
-lounge_home:
-  name: Lounge
-  entities:
-    - group.lounge_lamps_front
-    - group.lounge_lamps_back
-    - group.lounge_lights
-    - sensor.aeotec_zw100_multisensor_6_burglar_2_10
-    - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+    - input_boolean.away
 
 media:
   name: Media
+  icon: mdi:movie
   view: yes
   entities:
     - media_player.bedroom
@@ -44,23 +41,38 @@ media:
 
 lounge:
   name: Lounge
+  icon: mdi:sofa
   view: yes
   entities:
     - group.lounge_lamps_front
     - group.lounge_lamps_back
     - group.lounge_lights
+    - switch.subwoofer
     - sensor.aeotec_zw100_multisensor_6_burglar_2_10
     - sensor.aeotec_zw100_multisensor_6_temperature_2_1
     - camera.lounge
 
+lounge_home:
+  name: Lounge
+  icon: mdi:home
+  entities:
+    - group.lounge_lamps_front
+    - group.lounge_lamps_back
+    - group.lounge_lights
+    - switch.subwoofer
+    - sensor.aeotec_zw100_multisensor_6_burglar_2_10
+    - sensor.aeotec_zw100_multisensor_6_temperature_2_1
+
 lounge_lamps_back:
   name: Lounge Lamps (Desk)
+  icon: mdi:lamp
   entities:
     - light.lounge_back_colour
     - light.lounge_bloom_back
 
 lounge_lamps_front:
   name: Lounge Lamps (Couch)
+  icon: mdi:lamp
   entities:
     - light.lounge_front_colour
     - light.lounge_bloom_front
@@ -74,6 +86,7 @@ lounge_lights:
 
 kitchen:
   name: Kitchen
+  icon: mdi:silverware-fork
   view: yes
   entities:
     - light.kitchen_cabinet_light
@@ -81,12 +94,14 @@ kitchen:
 
 kitchen_home:
   name: Kitchen
+  icon: mdi:silverware-fork
   entities:
     - light.kitchen_cabinet_light
     - switch.kitchen_fairy_lights
 
 bedroom:
   name: Bedroom
+  icon: mdi:hotel
   view: yes
   entities: 
     - group.bedroom_lamps
@@ -94,6 +109,7 @@ bedroom:
 
 bedroom_home:
   name: Bedroom
+  icon: mdi:hotel
   entities: 
     - group.bedroom_lamps
     - group.bedroom_lights
@@ -110,31 +126,35 @@ bedroom_lights:
   entities:
     - light.bedroom_light
 
-other_lights:
-  name: Other
-  view: no
-  entities:
-    - light.hallway_upstairs
-    - light.hallway_downstairs_colour
-    - light.outside_front
-    - switch.door_front
-    - switch.away
- 
 hallway:
   name: Hallway
-  entities:
-    - light.hallway_downstairs_colour
-
-landing:
-  name: Landing
+  icon: mdi:stairs
+  view: yes
   entities:
     - light.hallway_upstairs
+    - light.hallway_downstairs_colour
+
+hallway_home:
+  name: Hallway
+  icon: mdi:stairs
+  entities:
+    - light.hallway_upstairs
+    - light.hallway_downstairs_colour
 
 outside:
   name: Outside
+  icon: mdi:glassdoor
+  view: yes
   entities:
     - light.outside_front
-    - camera.generic_camera
+    - switch.door_front
+
+outside_home:
+  name: Outside
+  icon: mdi:glassdoor
+  entities:
+    - light.outside_front
+    - switch.door_front
 
 downstairs:
   name: Downstairs
@@ -147,7 +167,6 @@ upstairs:
   name: Upstairs
   entities:
     - group.bedroom
-    - group.landing
 
 living_area:
   name: Living Area

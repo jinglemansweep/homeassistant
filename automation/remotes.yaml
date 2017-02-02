@@ -1,5 +1,20 @@
-- alias: Living lights on
-  trigger:
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_hallway
+    state: "on"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.away
+
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_hallway
+    state: "off"
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.away
+
+- trigger:
     platform: state
     entity_id: switch.remote_a1
     state: "on"
@@ -7,12 +22,23 @@
     - service: homeassistant.turn_on
       entity_id: group.living_area
 
-- alias: Living lights off
-  trigger:
+- trigger:
     platform: state
     entity_id: switch.remote_a1
     state: "off"
   action:
     - service: homeassistant.turn_off
-      entity_id: group.living_area
+      entity_id:
+        - group.living_area
+        - group.loud_things
+
+- alias: Announcement
+  trigger:
+    platform: state
+    entity_id: switch.remote_a4
+    state: "on"
+  action:
+    - service: script.turn_on
+      entity_id: script.announce
+
 

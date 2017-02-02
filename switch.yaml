@@ -20,11 +20,12 @@
       0a140054f371df08000050:
         name: remote_b4
       0a140004f35ed601010060:
-        name: away
+        name: moodswitch_hallway
       0a140032f371df0d010060:
         name: subwoofer
       0a140003f371df0e010060:
         name: kitchen_fairy_lights
+ 
   - platform: mqtt
     name: Sleeping
     command_topic: ha/louis/sleeping

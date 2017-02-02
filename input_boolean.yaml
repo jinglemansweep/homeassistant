@@ -1,5 +1,5 @@
-override:
-  name: Override Automation
+away:
   initial: off
-  icon: mdi:pan_tool
+override:
+  initial: off
 
