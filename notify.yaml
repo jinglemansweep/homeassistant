@@ -1,3 +1,10 @@
+- name: residents
+  platform: group
+  services:
+    - service: join_louis_chrome
+    - service: join_louis_phone
+    - service: lannounce_nexus9
+
 - name: slack
   platform: slack
   api_key: !secret slack_api_key
@@ -33,3 +40,11 @@
   platform: html5
   gcm_api_key: !secret gcm_api_key
   gcm_sender_id: !secret gcm_sender_id
+
+- name: lannounce_nexus9
+  platform: lannouncer
+  host: nexus9.home
+
+- name: lannounce_phone_louis
+  platform: lannouncer
+  host: phone-louis.home

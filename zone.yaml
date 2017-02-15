@@ -7,3 +7,16 @@
   radius: 200
   latitude: !secret zone_office_louis_latitude
   longitude: !secret zone_office_louis_longitude
+
+- name: OfficeSarah
+  radius: 200
+  latitude: !secret zone_office_sarah_latitude
+  longitude: !secret zone_office_sarah_longitude
+
+- name: StationHome
+  radius: 200
+  latitude: !secret zone_station_home_latitude
+  longitude: !secret zone_station_home_longitude
+
+
+

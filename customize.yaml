@@ -29,15 +29,18 @@ sensor.aeotec_zw100_multisensor_6_temperature_2_1:
 switch.door_front:
   friendly_name: Front Door
   icon: mdi:glassdoor
+switch.door_back:
+  friendly_name: Back Door
+  icon: mdi:glassdoor
 switch.subwoofer:
   friendly_name: Subwoofer
   icon: mdi:speaker
 switch.kitchen_fairy_lights:
   friendly_name: Fairy Lights
   icon: mdi:lightbulb-on-outline
-device_tracker.lk_phone:
+device_tracker.louis_phone:
   friendly_name: Louis
-device_tracker.sc_phone:
+device_tracker.sarah_phone:
   friendly_name: Sarah
 media_player.bedroom:
   friendly_name: Bedroom Cast

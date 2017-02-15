@@ -1,0 +1,14 @@
+  door_front:
+    name: Front door is open
+    entity_id: switch.door_front
+    repeat: 1
+    notifiers:
+      - residents
+
+  door_back:
+    name: Back door is open
+    entity_id: switch.door_back
+    repeat: 30
+    skip_first: true
+    notifiers:
+      - residents

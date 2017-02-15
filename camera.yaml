@@ -1,6 +1,11 @@
-- platform: ffmpeg
+- platform: mjpeg
   name: lounge
-  input: -rtsp_transport tcp -i rtsp://10.0.2.211:554/ch0_0.h264
-- platform: generic
-  name: external
-  still_image_url: !secret cctv_image_url
+  mjpeg_url: http://docker.home:44401
+
+- platform: mjpeg
+  name: back
+  mjpeg_url: http://docker.home:44402
+
+- platform: mjpeg
+  name: front
+  mjpeg_url: http://docker.home:44403

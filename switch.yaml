@@ -3,6 +3,8 @@
     devices:
       0a140011f4c0a00a000050:
         name: door_front
+      0a140000f4c0730a000060:
+        name: door_back
       0a140087f371df01010050:
         name: remote_a1
       0a140043f371df02000050:

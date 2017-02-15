@@ -1,3 +1,23 @@
+- alias: Disarm alarm (facial recognition)
+  trigger:
+    platform: event
+    event_type: image_processing.detect_face
+    event_data:
+      entity_id: image_processing.microsoftface_lounge
+      name: louis
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_away
+  action:
+    - service: notify.residents
+      data:
+        message: "Recognised Louis' face"
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
+
 - alias: Arm alarm (away)
   trigger:
     platform: state
@@ -26,11 +46,9 @@
     entity_id: alarm_control_panel.house
     state: pending
   action:
-    - service: script.turn_on
-      entity_id: script.notify
+    - service: notify.residents
       data:
-        variables:
-          message: "Activating security alarm"
+        message: "Activating security alarm"
 
 - alias: Arming set
   trigger:
@@ -38,11 +56,9 @@
     entity_id: alarm_control_panel.house
     state: armed_away
   action:
-    - service: script.turn_on
-      entity_id: script.notify
+    - service: notify.residents
       data:
-        variables:
-          message: "Security alarm has been set"
+        message: "Security alarm has been set"
 
 - alias: Disarm start
   trigger:
@@ -50,11 +66,9 @@
     entity_id: alarm_control_panel.house
     state: disarmed
   action:
-    - service: script.turn_on
-      entity_id: script.notify
+    - service: notify.residents
       data:
-        variables:
-          message: "Security alarm has been disabled"
+        message: "Security alarm has been disabled"
 
 - alias: Trigger alarm if motion downstairs
   trigger:
@@ -67,11 +81,9 @@
       entity_id: alarm_control_panel.house
       state: armed_away
   action:
-    - service: script.turn_on
-      entity_id: script.notify
+    - service: notify.residents
       data:
-        variables:
-          message: "Unauthorised entry to this house has been detected. The residents have been informed. Please leave the property now."
+        message: "Unauthorised entry to this house has been detected. The residents have been informed. Please leave the property now."
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.house
 

@@ -9,8 +9,7 @@
         entity_id: input_boolean.override
         state: "off"
   action:
-    - service: script.turn_on
-      entity_id: script.notify
+    - service: notify.residents
       data_template:
         variables:
           message: "Scene: {{ states('input_select.scene') }}"

@@ -9,8 +9,7 @@ default_view:
     - group.bedroom_home
     - group.outside_home
     - group.hallway_home
-    - device_tracker.lk_phone
-    - device_tracker.sc_phone
+    - device_tracker.louis_phone
     - alarm_control_panel.house
     - sensor.ups_time_left
     - sensor.speedtest_download
@@ -25,19 +24,6 @@ inputs_home:
     - script.announce
     - input_boolean.override
     - input_boolean.away
-
-media:
-  name: Media
-  icon: mdi:movie
-  view: yes
-  entities:
-    - media_player.bedroom
-    - media_player.kitchen
-    - media_player.living_room
-    - media_player.living_room_2
-    - media_player.nexus_player
-    - media_player.portable
-    - media_player.shield_android_tv
 
 lounge:
   name: Lounge
@@ -148,6 +134,7 @@ outside:
   entities:
     - light.outside_front
     - switch.door_front
+    - switch.door_back
 
 outside_home:
   name: Outside
@@ -155,6 +142,7 @@ outside_home:
   entities:
     - light.outside_front
     - switch.door_front
+    - switch.door_back
 
 downstairs:
   name: Downstairs
@@ -196,4 +184,25 @@ loud_things:
   name: Loud Things
   entities:
     - switch.subwoofer
- 
+
+media:
+  name: Media
+  icon: mdi:movie
+  view: yes
+  entities:
+    - media_player.bedroom
+    - media_player.kitchen
+    - media_player.living_room
+    - media_player.living_room_2
+    - media_player.nexus_player
+    - media_player.portable
+    - media_player.shield_android_tv
+
+cctv:
+  name: CCTV
+  icon: mdi:camera
+  view: yes
+  entities:
+    - camera.front
+    - camera.lounge
+    - camera.back

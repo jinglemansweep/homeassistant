@@ -13,6 +13,7 @@ logbook:
 sun:
 
 alarm_control_panel: !include alarm_control_panel.yaml
+alert: !include alert.yaml
 apcupsd: !include apcupsd.yaml
 automation: !include_dir_merge_list automation
 binary_sensor: !include binary_sensor.yaml
@@ -22,6 +23,7 @@ google: !include google.yaml
 group: !include group.yaml
 http: !include http.yaml
 ifttt: !include ifttt.yaml
+image_processing: !include image_processing.yaml
 influxdb: !include influxdb.yaml
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
@@ -29,6 +31,7 @@ joaoapps_join: !include joaoapps_join.yaml
 logger: !include logger.yaml
 light: !include light.yaml
 microsoft_face: !include microsoft_face.yaml
+media_player: !include media_player.yaml
 mqtt: !include mqtt.yaml
 notify: !include notify.yaml
 proximity: !include proximity.yaml

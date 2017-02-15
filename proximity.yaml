@@ -1,8 +1,10 @@
 home:
   ignored_zones:
     - OfficeLouis
+    - OfficeSarah
+    - StationHome
   devices:
-    - device_tracker.lgd855a5762c20
+    - device_tracker.louis_phone
   tolerance: 50
   unit_of_measurement: mi
 

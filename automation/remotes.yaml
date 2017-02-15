@@ -32,6 +32,25 @@
         - group.living_area
         - group.loud_things
 
+- trigger:
+    platform: state
+    entity_id: switch.remote_a2
+    state: "on"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.override
+
+- trigger:
+    platform: state
+    entity_id: switch.remote_a2
+    state: "off"
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.override
+
+
+
+
 - alias: Announcement
   trigger:
     platform: state
