@@ -1,6 +1,6 @@
 - platform: harmony
   name: Lounge
   host: harmony.home
-- platform: harmony
-  name: Bedroom
-  host: harmony-bedroom.home
+# - platform: harmony
+#   name: Bedroom
+#   host: harmony-bedroom.home

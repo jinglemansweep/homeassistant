@@ -1,18 +1,26 @@
-- alias: Override
+# AUTOMATION OVERRIDE
+
+- alias: Override enabled
   trigger:
     platform: state
     entity_id: input_boolean.override
+    to: 'on'
   action:
     - service: notify.residents
-      data_template:
-        message: >
-          {% if trigger.to_state.state == 'on' %}
-            Manual override enabled. No further automation actions will occur until 6am tomorrow morning.
-          {% else %}
-            Manual override disabled. Normal operations will now resume.
-          {% endif %}
+      data:
+        message: Manual override enabled. No further automation actions will occur until 6am tomorrow morning.
     - service: script.turn_on
       entity_id: script.flash
+ 
+- alias: Override disabled
+  trigger:
+    platform: state
+    entity_id: input_boolean.override
+    to: 'off'
+  action:
+    - service: notify.residents
+      data:
+        message: Manual override disabled. Normal operations will now resume.
 
 - alias: Override Timeout
   trigger:
@@ -21,4 +29,44 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.override
+
+# RESIDENTS AWAY FROM HOME
+
+- alias: Away enabled
+  trigger:
+    platform: state
+    entity_id: input_boolean.away
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.away_enabled
+
+- alias: Away disabled
+  trigger:
+    platform: state
+    entity_id: input_boolean.away
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.away_disabled
+
+# RESIDENTS BEDTIME
+
+- alias: Bedtime enabled
+  trigger:
+    platform: state
+    entity_id: input_boolean.bedtime
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.bedtime_enabled
+          
+- alias: Bedtime disabled
+  trigger:
+    platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.bedtime_disabled
 

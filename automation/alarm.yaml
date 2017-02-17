@@ -1,0 +1,37 @@
+- alias: Disarm alarm (facial recognition)
+  trigger:
+    platform: event
+    event_type: image_processing.detect_face
+    event_data:
+      entity_id: image_processing.microsoftface_lounge
+      name: louis
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_away
+  action:
+    - service: notify.residents
+      data:
+        message: "Recognised Louis' face"
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.house
+      data:
+        code: !secret alarm_code
+
+- alias: Trigger alarm if motion downstairs
+  trigger:
+    platform: state
+    entity_id: sensor.aeotec_zw100_multisensor_6_burglar_2_10
+    from: "0"
+    to: "8"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.house
+      state: armed_away
+  action:
+    - service: notify.residents
+      data:
+        message: "Unauthorised entry! The residents have been informed!"
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.house
+

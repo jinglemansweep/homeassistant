@@ -3,6 +3,12 @@ alarm_control_panel.house:
 input_boolean.away:
   friendly_name: Set Away
   icon: mdi:arrow-top-right
+input_boolean.bedtime:
+  friendly_name: Bedtime
+  icon: mdi:sleep
+input_boolean.lounge:
+  friendly_name: Lounge Active
+  icon: mdi:sofa
 input_boolean.override:
   friendly_name: Override Automation
   icon: mdi:pause-circle-outline

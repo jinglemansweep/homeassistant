@@ -21,8 +21,14 @@
         name: remote_b3
       0a140054f371df08000050:
         name: remote_b4
+      0a140000f362ff01010060:
+        name: moodswitch_lounge
       0a140004f35ed601010060:
-        name: moodswitch_hallway
+        name: moodswitch_door_front
+      0a140000f3003001010060:
+        name: moodswitch_bedroom
+      0a140005f2efa301010060:
+        name: moodswitch_stairs
       0a140032f371df0d010060:
         name: subwoofer
       0a140003f371df0e010060:

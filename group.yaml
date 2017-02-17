@@ -9,6 +9,7 @@ default_view:
     - group.bedroom_home
     - group.outside_home
     - group.hallway_home
+    - group.debug_home
     - device_tracker.louis_phone
     - alarm_control_panel.house
     - sensor.ups_time_left
@@ -24,6 +25,7 @@ inputs_home:
     - script.announce
     - input_boolean.override
     - input_boolean.away
+    - input_boolean.bedtime
 
 lounge:
   name: Lounge
@@ -206,3 +208,4 @@ cctv:
     - camera.front
     - camera.lounge
     - camera.back
+

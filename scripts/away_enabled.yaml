@@ -1,0 +1,24 @@
+alias: Away Enabled
+sequence:
+  - service: notify.residents
+    data:
+      message: Residents away.
+  - service: alarm_control_panel.alarm_arm_away
+    entity_id: alarm_control_panel.house
+    data:
+      code: !secret alarm_code
+  - service: homeassistant.turn_off
+    entity_id: group.upstairs
+  - service: homeassistant.turn_off
+    entity_id: group.downstairs
+  - service: light.hue_activate_scene
+    data:
+      group_name: Lounge
+      scene_name: HA Away
+  - service: light.hue_activate_scene
+    data:
+      group_name: Kitchen
+      scene_name: HA Away
+  - service: homeassistant.turn_off
+    entity_id: input_boolean.asleep
+

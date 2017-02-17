@@ -10,3 +10,4 @@
 - platform: owntracks
   max_gps_accuracy: 200
   track_new_devices: true
+  secret: !secret owntracks_secret

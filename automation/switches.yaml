@@ -1,6 +1,8 @@
+# MOOD SWITCH: FRONT DOOR
+
 - trigger:
     platform: state
-    entity_id: switch.moodswitch_hallway
+    entity_id: switch.moodswitch_door_front
     state: "on"
   action:
     - service: input_boolean.turn_on
@@ -8,11 +10,49 @@
 
 - trigger:
     platform: state
-    entity_id: switch.moodswitch_hallway
+    entity_id: switch.moodswitch_door_front
     state: "off"
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.away
+
+# MOOD SWITCH: LOUNGE
+
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_lounge
+    state: "on"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.lounge
+
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_lounge
+    state: "off"
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.lounge
+
+# MOOD SWITCH: STAIRS
+
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_stairs
+    state: "on"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.bedtime
+
+- trigger:
+    platform: state
+    entity_id: switch.moodswitch_stairs
+    state: "off"
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.bedtime
+
+# REMOTE: OLD
 
 - trigger:
     platform: state
@@ -47,9 +87,6 @@
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.override
-
-
-
 
 - alias: Announcement
   trigger:

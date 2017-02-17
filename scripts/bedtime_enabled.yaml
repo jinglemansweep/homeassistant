@@ -1,0 +1,20 @@
+alias: Bedtime Enabled
+sequence:
+  - service: alarm_control_panel.alarm_arm_home
+    entity_id: alarm_control_panel.house
+    data:
+      code: !secret alarm_code
+  - service: homeassistant.turn_off
+    entity_id: group.downstairs
+  - service: homeassistant.turn_off
+    entity_id: light.outside_front
+  - service: light.hue_activate_scene
+    data:
+      group_name: Lounge
+      scene_name: HA Bedtime
+  - service: light.hue_activate_scene
+    data:
+      group_name: Kitchen
+      scene_name: HA Bedtime
+
+
