@@ -1,100 +1,60 @@
-# MOOD SWITCH: FRONT DOOR
+# RESIDENTS AWAY FROM HOME
 
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_door_front
-    state: "on"
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.away
-
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_door_front
-    state: "off"
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.away
-
-# MOOD SWITCH: LOUNGE
-
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_lounge
-    state: "on"
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.lounge
-
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_lounge
-    state: "off"
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.lounge
-
-# MOOD SWITCH: STAIRS
-
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_stairs
-    state: "on"
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.bedtime
-
-- trigger:
-    platform: state
-    entity_id: switch.moodswitch_stairs
-    state: "off"
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.bedtime
-
-# REMOTE: OLD
-
-- trigger:
-    platform: state
-    entity_id: switch.remote_a1
-    state: "on"
-  action:
-    - service: homeassistant.turn_on
-      entity_id: group.living_area
-
-- trigger:
-    platform: state
-    entity_id: switch.remote_a1
-    state: "off"
-  action:
-    - service: homeassistant.turn_off
-      entity_id:
-        - group.living_area
-        - group.loud_things
-
-- trigger:
-    platform: state
-    entity_id: switch.remote_a2
-    state: "on"
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.override
-
-- trigger:
-    platform: state
-    entity_id: switch.remote_a2
-    state: "off"
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.override
-
-- alias: Announcement
+- alias: Away enabled
   trigger:
     platform: state
-    entity_id: switch.remote_a4
-    state: "on"
+    entity_id: switch.moodswitch_door_front
+    to: 'on'
   action:
     - service: script.turn_on
-      entity_id: script.announce
+      entity_id: script.away_enabled
 
+- alias: Away disabled
+  trigger:
+    platform: state
+    entity_id: switch.moodswitch_door_front
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.away_disabled
+
+# RESIDENTS BEDTIME
+
+- alias: Bedtime enabled
+  trigger:
+    platform: state
+    entity_id: switch.moodswitch_stairs
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.bedtime_enabled
+          
+- alias: Bedtime disabled
+  trigger:
+    platform: state
+    entity_id: switch.moodswitch_stairs
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.bedtime_disabled
+
+# DOWNSTAIRS ACTIVE
+
+- alias: Downstairs active enabled
+  trigger:
+    platform: state
+    entity_id: switch.moodswitch_lounge
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.downstairs_active_enabled
+          
+- alias: Downstairs active disabled
+  trigger:
+    platform: state
+    entity_id: switch.moodswitch_lounge
+    to: 'off'
+  action:
+    - service: script.turn_on
+      entity_id: script.downstairs_active_disabled
 

@@ -1,14 +1,5 @@
 alarm_control_panel.house:
   friendly_name: HouseAlarm
-input_boolean.away:
-  friendly_name: Set Away
-  icon: mdi:arrow-top-right
-input_boolean.bedtime:
-  friendly_name: Bedtime
-  icon: mdi:sleep
-input_boolean.lounge:
-  friendly_name: Lounge Active
-  icon: mdi:sofa
 input_boolean.override:
   friendly_name: Override Automation
   icon: mdi:pause-circle-outline
@@ -32,6 +23,15 @@ sensor.aeotec_zw100_multisensor_6_burglar_2_10:
   friendly_name: Motion Lounge
 sensor.aeotec_zw100_multisensor_6_temperature_2_1:
   friendly_name: Temp Lounge
+switch.moodswitch_door_front:
+  friendly_name: Set Away
+  icon: mdi:arrow-top-right
+switch.moodswitch_stairs:
+  friendly_name: Bedtime
+  icon: mdi:sleep
+switch.moodswitch_lounge:
+  friendly_name: Downstairs Active
+  icon: mdi:sofa
 switch.door_front:
   friendly_name: Front Door
   icon: mdi:glassdoor

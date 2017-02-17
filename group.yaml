@@ -24,8 +24,12 @@ inputs_home:
   entities:
     - script.announce
     - input_boolean.override
+    - input_boolean.downstairs_active
     - input_boolean.away
     - input_boolean.bedtime
+    - switch.moodswitch_lounge
+    - switch.moodswitch_door_front
+    - switch.moodswitch_stairs
 
 lounge:
   name: Lounge

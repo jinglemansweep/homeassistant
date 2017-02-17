@@ -8,9 +8,11 @@ sequence:
     data:
       code: !secret alarm_code
   - service: homeassistant.turn_off
-    entity_id: group.upstairs
+    entity_id: switch.moodswitch_lounge
   - service: homeassistant.turn_off
-    entity_id: group.downstairs
+    entity_id: group.upstairs
+  - delay:
+      seconds: 30
   - service: light.hue_activate_scene
     data:
       group_name: Lounge
@@ -19,6 +21,4 @@ sequence:
     data:
       group_name: Kitchen
       scene_name: HA Away
-  - service: homeassistant.turn_off
-    entity_id: input_boolean.asleep
 

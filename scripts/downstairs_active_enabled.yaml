@@ -1,0 +1,11 @@
+alias: Downstairs Active Enabled
+sequence:
+  - service: remote.turn_on
+    entity_id: remote.lounge
+    data:
+      activity: "Virgin Media"
+  - service: light.hue_activate_scene
+    data:
+      group_name: Lounge
+      scene_name: Brighton
+

@@ -5,16 +5,5 @@ sequence:
     data:
       code: !secret alarm_code
   - service: homeassistant.turn_off
-    entity_id: group.downstairs
-  - service: homeassistant.turn_off
-    entity_id: light.outside_front
-  - service: light.hue_activate_scene
-    data:
-      group_name: Lounge
-      scene_name: HA Bedtime
-  - service: light.hue_activate_scene
-    data:
-      group_name: Kitchen
-      scene_name: HA Bedtime
-
+    entity_id: switch.moodswitch_lounge
 

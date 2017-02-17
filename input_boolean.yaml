@@ -1,7 +1,3 @@
-away:
-  initial: off
-bedtime:
-  initial: off
 override:
   initial: off
 
