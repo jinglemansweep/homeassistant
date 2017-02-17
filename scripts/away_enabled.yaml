@@ -2,7 +2,7 @@ alias: Away Enabled
 sequence:
   - service: notify.residents
     data:
-      message: Residents away.
+      message: Have a safe journey.
   - service: alarm_control_panel.alarm_arm_away
     entity_id: alarm_control_panel.house
     data:
@@ -14,7 +14,7 @@ sequence:
   - service: homeassistant.turn_off
     entity_id: group.upstairs
   - delay:
-      seconds: 10
+      seconds: 5
   - service: light.hue_activate_scene
     data:
       group_name: Lounge

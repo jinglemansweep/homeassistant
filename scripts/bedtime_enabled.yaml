@@ -1,5 +1,8 @@
 alias: Bedtime Enabled
 sequence:
+  - service: notify.residents
+    data:
+      message: Good night.
   - service: alarm_control_panel.alarm_arm_home
     entity_id: alarm_control_panel.house
     data:

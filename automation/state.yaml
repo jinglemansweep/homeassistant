@@ -9,8 +9,10 @@
     - service: notify.residents
       data:
         message: Manual override enabled. No further automation actions will occur until 6am tomorrow morning.
-    - service: script.turn_on
-      entity_id: script.flash
+    - service: light.turn_on
+      entity_id: group.flash_lights
+      data:
+        flash: short
  
 - alias: Override disabled
   trigger:
@@ -21,7 +23,11 @@
     - service: notify.residents
       data:
         message: Manual override disabled. Normal operations will now resume.
-
+    - service: light.turn_on
+      entity_id: group.flash_lights
+      data:
+        flash: short
+ 
 - alias: Override Timeout
   trigger:
     platform: time

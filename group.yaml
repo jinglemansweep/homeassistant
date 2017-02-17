@@ -174,10 +174,20 @@ house:
     - group.downstairs
     - group.upstairs
 
+flash_lights:
+  name: Flash Lights
+  entities:
+    - light.lounge_tv_light
+    - light.kitchen_cabinet_light
+
 alarm_lights:
   name: Alarm Lights
   entities:
     - light.lounge_tv_light
+    - light.lounge_back_colour
+    - light.lounge_front_colour
+    - light.lounge_bloom_front
+    - light.lounge_bloom_back
     - light.kitchen_cabinet_light
 
 residents:
