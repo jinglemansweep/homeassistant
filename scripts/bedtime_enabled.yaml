@@ -6,4 +6,5 @@ sequence:
       code: !secret alarm_code
   - service: homeassistant.turn_off
     entity_id: switch.moodswitch_lounge
-
+  - service: homeassistant.turn_off
+    entity_id: switch.moodswitch_door_front

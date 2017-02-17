@@ -10,9 +10,11 @@ sequence:
   - service: homeassistant.turn_off
     entity_id: switch.moodswitch_lounge
   - service: homeassistant.turn_off
+    entity_id: switch.moodswitch_stairs
+  - service: homeassistant.turn_off
     entity_id: group.upstairs
   - delay:
-      seconds: 30
+      seconds: 10
   - service: light.hue_activate_scene
     data:
       group_name: Lounge
