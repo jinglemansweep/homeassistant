@@ -17,3 +17,23 @@
     - service: alarm_control_panel.alarm_trigger
       entity_id: alarm_control_panel.house
 
+- alias: Notify of motion in back garden
+  trigger:
+    platform: state
+    entity_id: binary_sensor.cctv_back_motion
+    to: 'on'
+  action:
+    - service: notify.residents
+      data:
+        message: Motion in back garden.
+
+- alias: Notify of motion in front garden
+  trigger:
+    platform: state
+    entity_id: binary_sensor.cctv_front_motion
+    to: 'on'
+  action:
+    - service: notify.residents
+      data:
+        message: Motion in front garden.
+

@@ -1,0 +1,33 @@
+- alias: Reset lounge motion binary sensor
+  trigger:
+    platform: state
+    entity_id: binary_sensor.cctv_lounge_motion
+    to: 'on'
+  action:
+    - delay:
+        minutes: 1
+    - service: binary_sensor.turn_off
+      entity_id: binary_sensor.cctv_lounge_motion
+ 
+- alias: Reset back motion binary sensor
+  trigger:
+    platform: state
+    entity_id: binary_sensor.cctv_back_motion
+    to: 'on'
+  action:
+    - delay:
+        minutes: 1
+    - service: binary_sensor.turn_off
+      entity_id: binary_sensor.cctv_back_motion
+
+- alias: Reset front motion binary sensor
+  trigger:
+    platform: state
+    entity_id: binary_sensor.cctv_front_motion
+    to: 'on'
+  action:
+    - delay:
+        minutes: 1
+    - service: binary_sensor.turn_off
+      entity_id: binary_sensor.cctv_front_motion
+

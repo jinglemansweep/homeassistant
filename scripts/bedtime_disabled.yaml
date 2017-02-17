@@ -4,5 +4,6 @@ sequence:
     entity_id: alarm_control_panel.house
     data:
       code: !secret alarm_code
-
+  - service: homeassistant.turn_on
+    entity_id: switch.moodswitch_lounge
 

@@ -1,0 +1,12 @@
+- alias: Check downstairs activity
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  condition:
+    condition: state
+    entity_id: remote.lounge
+    state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.moodswitch_lounge
+ 
