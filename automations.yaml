@@ -1,0 +1,27 @@
+- id: '1574610042293'
+  alias: test.monkey
+  description: ''
+  trigger:
+  - entity_id: light.bathroom
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - service: automation.reload
+- id: '1579462829053'
+  alias: doorbell
+  description: ''
+  trigger:
+  - entity_id: switch.doorbell_button
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: There is somebody at the door!
+    service: tts.google_translate_say
+  - data:
+      message: Front Doorbell Activated
+      title: Front Doorbell Activated
+    service: notify.notify

@@ -1,3 +1,0 @@
-  default: info
-  logs:
-    homeassistant.components.influxdb: fatal

@@ -1,45 +1,52 @@
-homeassistant:
-  name: Home
-  unit_system: metric
-  time_zone: Europe/London
-  customize: !include customize.yaml
+default_config:
+http:
+  base_url: 7kir1og8fc3ieaq5t4ynxm89a6ndncam.ui.nabu.casa
 
-frontend:
-updater:
-discovery:
-conversation:
-history:
-logbook:
-sun:
-
-alarm_control_panel: !include alarm_control_panel.yaml
-alert: !include alert.yaml
-apcupsd: !include apcupsd.yaml
-automation: !include_dir_merge_list automation
+automation: !include automations.yaml
+group: !include groups.yaml
 binary_sensor: !include binary_sensor.yaml
-camera: !include camera.yaml
-device_tracker: !include device_tracker.yaml
-google: !include google.yaml
-group: !include group.yaml
-http: !include http.yaml
-ifttt: !include ifttt.yaml
-#image_processing: !include image_processing.yaml
-influxdb: !include influxdb.yaml
-input_boolean: !include input_boolean.yaml
-input_select: !include input_select.yaml
-joaoapps_join: !include joaoapps_join.yaml
-logger: !include logger.yaml
-light: !include light.yaml
-#microsoft_face: !include microsoft_face.yaml
-media_player: !include media_player.yaml
-mqtt: !include mqtt.yaml
-notify: !include notify.yaml
-proximity: !include proximity.yaml
-remote: !include remote.yaml
-rfxtrx: !include rfxtrx.yaml
-script: !include_dir_named scripts
 sensor: !include sensor.yaml
+script: !include scripts.yaml
 switch: !include switch.yaml
-tts: !include tts.yaml
-zone: !include zone.yaml
-zwave: !include zwave.yaml
+
+blink:
+  username: !secret blink_username
+  password: !secret blink_password
+
+google:
+  client_id: !secret gcal_client_id
+  client_secret: !secret gcal_client_secret
+
+ifttt:
+  key: !secret ifttt_api_key
+
+influxdb:
+  host: d1.home
+  username: user
+  password: user
+  database: hass
+
+mqtt:
+  broker: !secret cloudmqtt_broker
+  port: !secret cloudmqtt_port
+  username: !secret cloudmqtt_username
+  password: !secret cloudmqtt_password
+
+person:
+  - name: Louis
+    id: d7401544969b488197b0a0d02000ec7e
+    device_trackers:
+      - device_tracker.phone_louis
+
+remote:
+  - platform: harmony
+    name: Lounge
+    host: harmony.home
+
+speedtestdotnet:
+
+tts:
+  - platform: google_translate
+    base_url: http://10.0.2.101:8123
+
+

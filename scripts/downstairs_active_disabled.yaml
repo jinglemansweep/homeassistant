@@ -1,9 +1,0 @@
-alias: Downstairs Active disabled
-sequence:
-  - service: remote.turn_off
-    entity_id: remote.lounge
-  - service: homeassistant.turn_off
-    entity_id: group.lounge
-  - service: homeassistant.turn_off
-    entity_id: group.kitchen
-

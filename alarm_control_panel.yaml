@@ -1,5 +1,0 @@
-  name: house
-  platform: manual
-  disarm_after_trigger: false
-  pending_time: 10
-  code: !secret alarm_code

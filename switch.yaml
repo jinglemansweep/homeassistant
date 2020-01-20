@@ -1,51 +1,46 @@
-  - platform: rfxtrx
-    automatic_add: true
-    devices:
-      0a140011f4c0a00a000050:
-        name: door_front
-      0a140000f4c0730a000060:
-        name: door_back
-      0a140087f371df01010050:
-        name: remote_a1
-      0a140043f371df02000050:
-        name: remote_a2
-      0a140090f371df03010060:
-        name: remote_a3
-      0a140092f371df04010060:
-        name: remote_a4
-      0a140052f371df05000050:
-        name: remote_b1
-      0a14003df371df06000060:
-        name: remote_b2
-      0a140053f371df07000050:
-        name: remote_b3
-      0a140054f371df08000050:
-        name: remote_b4
-      0a140000f362ff01010060:
-        name: moodswitch_lounge
-      0a140004f35ed601010060:
-        name: moodswitch_door_front
-      0a140000f3003001010060:
-        name: moodswitch_bedroom
-      0a140005f2efa301010060:
-        name: moodswitch_stairs
-      0a140032f371df0d010060:
-        name: subwoofer
-      0a140003f371df0e010060:
-        name: kitchen_fairy_lights
- 
-  - platform: mqtt
-    name: Sleeping
-    command_topic: ha/louis/sleeping
-    state_topic: ha/louis/sleeping
-    payload_on: "yes"
-    payload_off: "no"
-    retain: true
+- platform: template
+  switches:
+    watch_lounge_sky_tv:
+      friendly_name: Sky TV
+      value_template: "{{ is_state_attr('remote.lounge', 'current_activity', 'Sky TV') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.lounge
+          activity: '42860933'
+      turn_off:
+        service: remote.turn_off
+        data:
+          entity_id: remote.lounge
+          activity: '-1'
+- platform: template
+  switches:
+    watch_lounge_shield:
+      friendly_name: Shield
+      value_template: "{{ is_state_attr('remote.lounge', 'current_activity', 'Shield') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.lounge
+          activity: 'Shield'
+      turn_off:
+        service: remote.turn_off
+        data:
+          entity_id: remote.lounge
+          activity: 'PowerOff'
+- platform: template
+  switches:
+    watch_lounge_switch:
+      friendly_name: Switch
+      value_template: "{{ is_state_attr('remote.lounge', 'current_activity', 'Switch') }}"
+      turn_on:
+        service: remote.turn_on
+        data:
+          entity_id: remote.lounge
+          activity: 'Switch'
+      turn_off:
+        service: remote.turn_off
+        data:
+          entity_id: remote.lounge
+          activity: 'PowerOff'
 
-  - platform: mqtt
-    name: Home
-    command_topic: ha/louis/home
-    state_topic: ha/louis/home
-    payload_on: "yes"
-    payload_off: "no"
-    retain: true

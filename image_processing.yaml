@@ -1,7 +1,0 @@
-  - platform: microsoft_face_identify
-    name: face_id
-    group: residents
-    source:
-      - entity_id: camera.front
-      - entity_id: camera.back
-      - entity_id: camera.lounge
