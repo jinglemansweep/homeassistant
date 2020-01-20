@@ -1,6 +1,6 @@
 default_config:
 http:
-  base_url: 7kir1og8fc3ieaq5t4ynxm89a6ndncam.ui.nabu.casa
+  base_url: !secret base_url
 
 automation: !include automations.yaml
 group: !include groups.yaml
@@ -47,6 +47,6 @@ speedtestdotnet:
 
 tts:
   - platform: google_translate
-    base_url: http://10.0.2.101:8123
+    base_url: !secret tts_base_url
 
 
