@@ -1,13 +1,13 @@
 - platform: template
   switches:
-    watch_lounge_sky_tv:
-      friendly_name: Sky TV
-      value_template: "{{ is_state_attr('remote.lounge', 'current_activity', 'Sky TV') }}"
+    watch_lounge_tv:
+      friendly_name: TV
+      value_template: "{{ is_state_attr('remote.lounge', 'current_activity', 'Watch TV') }}"
       turn_on:
         service: remote.turn_on
         data:
           entity_id: remote.lounge
-          activity: '42860933'
+          activity: 'Watch TV'
       turn_off:
         service: remote.turn_off
         data:

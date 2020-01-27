@@ -14,7 +14,7 @@
                                             "entity": "switch.lounge_fan"
                                         },
                                         {
-                                            "entity": "switch.watch_lounge_sky_tv"
+                                            "entity": "switch.watch_lounge_tv"
                                         },
                                         {
                                             "entity": "switch.watch_lounge_shield"
@@ -118,6 +118,9 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "switch.bedroom_fan"
+                                },
+                                {
                                     "entity": "light.bedroom_light"
                                 },
                                 {
@@ -127,7 +130,7 @@
                                     "entity": "light.bedroom_lamp_right"
                                 }
                             ],
-                            "title": "Bedroom Lights",
+                            "title": "Bedroom Control",
                             "type": "entities"
                         },
                         {
@@ -247,7 +250,9 @@
                         }
                     ],
                     "icon": "mdi:earth",
-                    "path": "cctv",
+                    "panel": false,
+                    "path": "status",
+                    "theme": "Backend-selected",
                     "title": "Status"
                 },
                 {

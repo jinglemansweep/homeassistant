@@ -20,6 +20,12 @@ google:
   client_id: !secret gcal_client_id
   client_secret: !secret gcal_client_secret
 
+hue:
+  bridges:
+    - host: "hue-lounge.home"
+      allow_unreachable: true
+      allow_hue_groups: false
+
 ifttt:
   key: !secret ifttt_api_key
 
@@ -35,6 +41,12 @@ mqtt:
   username: !secret cloudmqtt_username
   password: !secret cloudmqtt_password
 
+notify:
+  - name: slack
+    platform: slack
+    api_key: !secret slack_api_key
+    default_channel: '#house'
+
 person:
   - name: Louis
     id: d7401544969b488197b0a0d02000ec7e
@@ -44,9 +56,10 @@ person:
 remote:
   - platform: harmony
     name: Lounge
-    host: harmony.home
+    host: "harmony-lounge.home"
 
 speedtestdotnet:
+  server_id: 26075
 
 tts:
   - platform: google_translate

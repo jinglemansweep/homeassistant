@@ -9,6 +9,8 @@
 .storage/auth_provider.homeassistant
 .storage/cloud
 .storage/core.*
+.storage/frontend.user_data_*
+.storage/google_assistant
 .storage/mobile_app
 .storage/onboarding
 .storage/person

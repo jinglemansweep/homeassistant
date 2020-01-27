@@ -10,18 +10,44 @@
   action:
   - service: automation.reload
 - id: '1579462829053'
-  alias: doorbell
-  description: ''
+  alias: Doorbell
+  description: Front doorbell automation
   trigger:
   - entity_id: switch.doorbell_button
+    from: 'on'
     platform: state
     to: 'off'
   condition: []
   action:
   - data:
-      message: There is somebody at the door!
+      message: There is somebody at the door.
     service: tts.google_translate_say
   - data:
       message: Front Doorbell Activated
-      title: Front Doorbell Activated
-    service: notify.notify
+    service: notify.slack
+- id: '1579656856081'
+  alias: Back Door Open
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.back_door_sensor_contact
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      message: Back Door Open
+    service: notify.slack
+- id: '1579657042620'
+  alias: Back Door Closed
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.back_door_sensor_contact
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: Back Door Closed
+    service: notify.slack
