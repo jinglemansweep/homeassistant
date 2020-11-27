@@ -1,0 +1,156 @@
+title: PeachTrees
+views:
+
+  - title: Home
+    path: home
+    icon: mdi:home
+    cards:
+      - type: entities
+        title: Lounge
+        entities:
+          - entity: switch.lounge_fan
+            name: Fan
+          - entity: light.lounge_front_lamp
+            name: Couch Lamp
+          - entity: light.lounge_candle_left
+            name: Candle Left
+          - entity: light.lounge_candle_right
+            name: Candle Right
+          - entity: light.lounge_desk_left
+            name: Desk Lamp Left
+          - entity: light.lounge_desk_right          
+            name: Desk Lamp Right
+          - entity: light.lounge_hexagon_cabinet          
+            name: Hexagon Cabinet
+          - entity: light.lounge_mirror_light
+            name: Mirror
+          - entity: light.lounge_overhead_back         
+            name: Overhead Back
+          - entity: light.lounge_overhead_front
+            name: Overhead Front
+      - type: entities
+        title: Kitchen
+        entities:
+          - entity: light.kitchen_cabinet_light
+            name: Cabinet Light
+          - entity: light.kitchen_hob_light
+            name: Lamp
+      - type: entities
+        title: Bedroom
+        entities:
+          - entity: light.bedroom_lamp_left
+            name: Lamp Left        
+          - entity: light.bedroom_lamp_right
+            name: Lamp Right
+          - entity: light.bedroom_light
+            name: Light
+          - entity: switch.bedroom_fan
+            name: Fan            
+      - type: entities
+        title: Other Lights
+        entities:
+          - entity: light.outside
+            name: Outside
+          - entity: light.bathroom
+            name: Bathroom
+          - entity: light.hallway
+            name: Hallway                           
+          - entity: light.guest_bedroom
+            name: Guest Bedroom
+          - entity: light.laundry
+            name: Laundry
+
+  - title: media
+    path: media
+    icon: mdi:movie
+    cards:
+      - type: media-control
+        entity: media_player.lounge_sonos   
+        name: Sonos (Lounge)    
+      - type: media-control
+        entity: media_player.shield
+        name: Shield (Lounge)    
+      - type: media-control
+        entity: media_player.lounge_chromecast
+        name: Chromecast (Lounge)
+      - type: media-control
+        entity: media_player.guest_room_tv
+        name: Chromecast (Guest Bedroom)
+      - type: media-control
+        entity: media_player.kitchen_nest_hub    
+        name: Nest Hub (Kitchen)        
+      - type: media-control
+        entity: media_player.upstairs_nest_mini   
+        name: Nest Mini (Upstairs)
+             
+  - title: Security
+    path: security
+    icon: mdi:cctv
+    cards:
+      - type: picture-glance
+        title: Front Doorbell
+        entities:
+          - binary_sensor.front_door_motion
+          - binary_sensor.front_door_ding
+          - sensor.front_door_last_motion
+          - sensor.front_door_last_ding
+        camera_image: camera.front_door
+      - type: picture-glance
+        title: Front Door
+        entities:
+          - binary_sensor.blink_front_door_battery
+          - binary_sensor.blink_front_door_camera_armed
+          - binary_sensor.blink_front_door_motion_detected
+        camera_image: camera.blink_front_door
+        tap_action:
+          action: call-service
+          service: blink.trigger_camera
+          service_data:
+            entity_id: camera.blink_front_door        
+      - type: picture-glance
+        title: Front Garden
+        entities:
+          - binary_sensor.blink_front_battery
+          - binary_sensor.blink_front_camera_armed
+          - binary_sensor.blink_front_motion_detected
+        camera_image: camera.blink_front
+        tap_action:
+          action: call-service
+          service: blink.trigger_camera
+          service_data:
+            entity_id: camera.blink_front          
+      - type: picture-glance
+        title: Back Garden
+        entities:
+          - binary_sensor.blink_back_battery
+          - binary_sensor.blink_back_camera_armed
+          - binary_sensor.blink_back_motion_detected
+        camera_image: camera.blink_back
+        tap_action:
+          action: call-service
+          service: blink.trigger_camera
+          service_data:
+            entity_id: camera.blink_back         
+      - type: picture-glance
+        title: Garage
+        entities:
+          - binary_sensor.blink_garage_battery
+          - binary_sensor.blink_garage_camera_armed
+          - binary_sensor.blink_garage_motion_detected
+        camera_image: camera.blink_garage
+        tap_action:
+          action: call-service
+          service: blink.trigger_camera
+          service_data:
+            entity_id: camera.blink_garage          
+
+
+    
+
+      
+ 
+
+
+
+
+
