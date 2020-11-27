@@ -1,8 +1,0 @@
-lounge_media:
-    name: Lounge Media Control
-    control: hidden
-    entities:
-      - switch.watch_lounge_sky_tv
-      - switch.watch_lounge_shield
-      - switch.watch_lounge_switch
-
